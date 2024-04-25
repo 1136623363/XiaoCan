@@ -1,0 +1,14 @@
+servernam   +   methodName：
+
+SilkwormCard   SilkwormCardService.GetUserCardNumber
+Silkworm   SilkwormService.GetClientUserInfo  用户信息
+Silkworm   SilkwormService.GetStorePromotionDetail  店铺详情
+RedPackService   RedPackService.GetOrderUserRedPackList  红包
+SilkwormDataLake   DataLakeService.Report
+SilkwormCard    SilkwormCardService.GetUserCardList
+SilkwormLuckRedPack   SilkwormMobileLuckRedPackService.CheckUserIsHaveRedPack
+SilkwormDataLake   DataLakeService.Report
+
+
+
+

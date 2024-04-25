@@ -1,0 +1,46 @@
+case 9:
+          r.url || (r.url = ""), f = (0, l.config)().serviceHost.httpsUrl, r.host && (f = r.host), r.api && (f += r.api), w = r.success || v, p = r.fail || v, h = r.header || {}, S = r.method || "POST", (N = Object.assign({}, g.defaultHeader, h))[i.default.PROTO_HEADER_SERVERNAME] = r.serverName, N[i.default.PROTO_HEADER_METHODNAME] = r.methodName, _ = (null === (a = r.data) || void 0 === a ? void 0 : a.user_id) || 0, O = (new Date).getTime(), "HsE8G5JroaRAF9JY", parseInt(1e4 * Math.random()), R = wx.getStorageSync("silkId"), T = wx.$storage.getUserInfo(), k = wx.getStorageSync("token"), P = wx.getStorageSync("location"), y = (0, d.wxuuid)().split("-").join(""), M = +(R || 0) + "", b = y.substring(0, 4) + M + y.substring(4, 20 - M.length - 4), N.version = (0, l.config)().version, N["X-Version"] = (0, l.config)().version, N["X-Nami"] = b, N["X-Garen"] = O, N["X-Ashe"] = (0, u.default)((0, u.default)((r.serverName + "." + r.methodName).toLowerCase()) + O + b), N["x-Annie"] = "XC", N["X-Platform"] = "mini", N["x-Teemo"] = R || 0, N["x-Vayne"] = _ || (null == T ? void 0 : T.user_id) || (null == T ? void 0 : T.id) || 0, k && "MpGateway.RefreshToken" !== r.methodName && "MpGateway.ProjectApp" !== r.methodName && (1e3 * (k.expiry - 86400) < (new Date).getTime() + k.diff && T || void 0 === (null == k ? void 0 : k.diff) && T ? (wx.hideLoading(), wx.$storage.removeUserInfo(), wx.removeStorageSync("token")) : N["x-Sivir"] = k.access_token), "SilkwormVipMobile.UpdatePackSelect" === r.methodName ? N["X-City"] = +((null === (H = P.ad_info) || void 0 === H ? void 0 : H.adcode) || 0) : N["x-City"] = +((null === (A = P.ad_info) || void 0 === A ? void 0 : A.adcode) || 0), "SilkwormElem" != r.serverName && "SilkwormMarketing" != r.serverName && "InviteWord" != r.serverName && "SilkwormChallenge" != r.serverName && "SilkwormRecallUsers" != r.serverName || (N.env = (0, l.config)().env), "Silkworm" != r.serverName && "SilkwormPointsShop" != r.serverName && "SilkwormMessageCenter" != r.serverName && "SilkwormDataLake" != r.serverName && "SilkwormRcs" != r.serverName && "RedPackService" != r.serverName || (N.env = (0, l.config)().env), "Silkworm" != r.serverName && "SilkwormMessageCenter" != r.serverName && "SilkwormMarketing" != r.serverName && "SilkwormCard" != r.serverName && "SilkwormPointsShop" != r.serverName && "SilkwormElem" != r.serverName || (N.env = (0, l.config)().env), "SilkwormElem" != r.serverName && "SilkwormMarketing" != r.serverName && "SilkwormLbs" != r.serverName && "ActivityTask" != r.serverName && "SilkwormCommunity" !== r.serverName && "SilkwormLuckRedPack" !== r.serverName && "SilkwormLottery" !== r.serverName && "SilkwormVip" !== r.serverName || (N.env = (0, l.config)().env), "Silkworm" != r.serverName && "MpGatewayBailu" != r.serverName && "SilkwormCard" != r.serverName && "BlindBox" != r.serverName && "WechatOpenapi" != r.serverName && "SilkwormCommunity" != r.serverName && "ActivityTask" != r.serverName && "Promotion" != r.serverName && "KfIMService" != r.serverName && "SilkwormLottery" != r.serverName || (N.env = (0, l.config)().env), r.appid ? N.appid = r.appid : N.appid = (0, l.config)().defaultHeader.appidNum, r.data || (r.data = {}), r.data.app_id = (0, l.config)().defaultHeader.appidNum, D = f + r.url, (0, l.config)().LOG_LEVEL, i.default.LOG_LEVEL_DEBUG, s.default.request({
+            url: D,
+            method: S,
+            header: N,
+            data: r.data,
+            success: function (e) {
+              if (200 === e.statusCode) {
+                var t = e.data;
+                if (t.status) {
+                  if (0 == t.status.code) w(t);
+                  else if ("SilkwormMobileMarketingService.CompleteTaskEvent" === r.methodName) p(new E(c, t));
+                  else {
+                    var a = t.status;
+                    p(new E(c, a))
+                  }
+                  return
+                }
+                if (t && 0 === t.code) w(t.data);
+                else {
+                  a = t.msg;
+                  p(new E(c, a))
+                }
+              } else if (401 === e.statusCode) wx.showModal({
+                title: "提示",
+                content: "您的登录已过期，请点击确定跳转首页重新登录！",
+                showCancel: !1,
+                success: function (e) {
+                  e.confirm && (wx.$storage.removeUserInfo(), wx.removeStorageSync("token"), wx.reLaunch({
+                    url: "/pages/loading/index"
+                  }))
+                }
+              });
+              else {
+                p(new E(c, a = "网络波动，请重试"))
+              }
+            },
+            fail: p
+          });
+        case 52:
+        case "end":
+          return e.stop()
+      }
+    }), e)
+  })))).apply(this, arguments)
+}

@@ -1,0 +1,18 @@
+# JSON文件转换为YAML格式并添加注释
+# 这是一个示例JSON文件
+SilkwormService.GetClientUserInfo: Silkworm  # 用户信息
+SilkwormService.GetStorePromotionDetail: Silkworm #店铺信息
+SilkwormService.GetStorePromotionList: Silkworm  #店铺列表
+SilkwormService.GetPromotionOrderList: Silkworm #订单信息
+SilkwormLbsService.Geocoder: SilkwormLbs #定位请求
+ActivityTaskMobileService.UserTaskV2: ActivityTask #用户积分
+SilkwormLotteryMobile.LotteryInfo: SilkwormLottery #抽奖次数
+SilkwormLotteryMobile.Lottery: SilkwormLottery #抽奖
+SilkwormLotteryMobile.AddLotteryTimes: SilkwormLottery #增加抽奖次数
+SilkwormCardService.GetUserCardNumber: SilkwormCard #可用卡券数量和即将过期
+SilkwormCardService.GetUserCardList: SilkwormCard #卡券详情
+SilkwormMobileCommunityService.ExchangeGoods: SilkwormCommunity #兑换饭票
+#SilkwormService.GetPromotionOrderList: Silkworm #未提交订单
+SilkwormService.CancelPromotionQuota: Silkworm  # 取消订单
+SilkwormService.GetClientPromotionOrder: Silkworm #抢单
+SilkwormRcsService.MeituanShangjinGetPoiList: SilkwormRcs #附近商铺

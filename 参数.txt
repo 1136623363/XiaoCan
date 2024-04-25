@@ -1,0 +1,37 @@
+x-garen
+x-ashe
+x-nami
+
+N["X-Garen"] = O
+O = (new Date).getTime()
+时间戳
+
+
+["X-Nami"] = b
+b = y.substring(0, 4) + M + y.substring(4, 20 - M.length - 4)
+y=(0,d.wxuuid)().split("-").join("")
+M=+(R||0)+""
+
+R = wx.getStorageSync("silkId")
+
+d.wxuuid =
+y=5c844b76d8f940c39ab15652fb4fbb93   cae6ee59a59e4fe886da94580ddf5418
+R=612528803
+M=612528803
+
+b=5c84 612528803 4b7
+
+
+
+
+N["X-Ashe"] = (0, u.default)((0, u.default)((r.serverName + "." + r.methodName).toLowerCase()) + O + b)
+r = serverName: 'Silkworm', methodName: 'SilkwormService.GetClientUserInfo'
+u.default->m
+m(n, r, e)
+n='silkwormlbs.silkwormlbsservice.geocoder'
+
+第一次n='63d8a5dad6163f32cd8f5423160d214417139638262320442612528803c57'
+
+N["X-Ashe"]='743902cf508b7bb26e0264afbb8b3cdd'
+
+
