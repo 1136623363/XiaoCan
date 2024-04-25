@@ -16,7 +16,7 @@ def get_user():
     return data
 
 if __name__ == '__main__':
-    promotion_id_list=[20243035,20243028]
+    promotion_id_list=[20243035,20243028,20243078]
     user_dict = get_user()
     for promotion_id in promotion_id_list:
 
