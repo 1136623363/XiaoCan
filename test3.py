@@ -1,10 +1,14 @@
+import time
+
 from utils import *
 
 # silk_id=843278704
 # x_vayne=1315903
 silk_id=612528803
 x_vayne=2395933
-methodname = 'SilkwormService.GetClientPromotionOrder'
+
+
+methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
 
 token=get_token(silk_id)
 data = get_data(methodname)

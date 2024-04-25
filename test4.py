@@ -1,4 +1,7 @@
 import datetime
 
+# 将时间戳转换为日期时间
+timestamp = 1714047447
+dt_object = datetime.datetime.fromtimestamp(timestamp)
 
-print(1714015874-int(str(int(datetime.datetime.now().timestamp() * 1000))[:10]))
+print(dt_object)

@@ -69,4 +69,63 @@ def requ(silk_id,token,servername,methodname,json_data,x_vayne):
     return response.json()
 
 
+def qiangdan(silk_id,promotion_id,x_vayne):
+    token = get_token(silk_id)
+    print("饭票检测")
+    methodname = 'SilkwormCardService.GetUserCardList'
+    data = get_data(methodname)
+    data.update({"silk_id": silk_id})
+    resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                servername=get_servername(methodname), token=token)
+    if resp['list'][0]['card']['name'] == "饭票":
+        # 抢单
+        print('有饭票,直接抢单')
+        methodname = 'SilkwormService.GrabPromotionQuota'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id,"promotion_id":promotion_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        promotion_order_id = resp.get("promotion_order_id")
+        if promotion_order_id == None:
+            return "抢单异常"+str(resp)
+        else:
+            print("抢单成功")
+            print("开始延时")
+            methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
+            data = get_data(methodname)
+            data.update({"silk_id": silk_id,"promotion_order_id": promotion_order_id})
+            resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                        servername=get_servername(methodname), token=token)
 
+            return "延时成功：" + str(resp)
+
+    else:
+        # 兑换饭票
+        print('兑换饭票')
+        methodname = 'SilkwormMobileCommunityService.ExchangeGoods'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        print("兑换饭票" + str(resp))
+
+        # 抢单
+        print('抢单')
+        methodname = 'SilkwormService.GrabPromotionQuota'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id, "promotion_id": promotion_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        promotion_order_id = resp.get("promotion_order_id")
+        if promotion_order_id == None:
+            return "抢单异常" + str(resp)
+        else:
+            print("抢单成功")
+            print("开始延时")
+            methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
+            data = get_data(methodname)
+            data.update({"silk_id": silk_id, "promotion_order_id": promotion_order_id})
+            resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                        servername=get_servername(methodname), token=token)
+
+            return "延时成功：" + str(resp)
