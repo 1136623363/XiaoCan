@@ -34,8 +34,8 @@ if __name__ == '__main__':
 
     # promotion_id_list=[20243035,20243028,20243078]
     user_dict = get_user()
-    for silk_id, x_vayne in user_dict.items():
-        Lucky(silk_id,x_vayne)
+    # for silk_id, x_vayne in user_dict.items():
+    #     Lucky(silk_id,x_vayne)
     # keyword = "奈雪"
     promotion_id_list = search(list(user_dict.items())[0][0],list(user_dict.items())[0][1])
     # print(promotion_id_list)
