@@ -131,6 +131,32 @@ def qiangdan(silk_id,promotion_id,x_vayne):
 
             return "延时成功：" + str(resp)
 
+def Lucky(silk_id,x_vayne):
+    methodname = 'SilkwormLotteryMobile.LotteryInfo'
+    token=get_token(silk_id)
+    data = get_data(methodname)
+    data.update({"silk_id":silk_id})
+    resp = requ(silk_id=silk_id,json_data=data,methodname=methodname,x_vayne=x_vayne,servername=get_servername(methodname),token=token)
+    lottery_info = resp['lottery_info']
+    # print(resp)
+    if lottery_info['if_shared'] == False:
+        methodname = 'SilkwormLotteryMobile.AddLotteryTimes'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        resp
+    if lottery_info['day_num'] >0 :
+        count=0
+        for i in range(1,lottery_info['day_num']+1):
+            methodname = 'SilkwormLotteryMobile.Lottery'
+            data = get_data(methodname)
+            data.update({"silk_id": silk_id})
+            resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                        servername=get_servername(methodname), token=token)
+            print(resp)
+        print(f"进行了{count}次抽奖")
+    print("今日无抽奖次数")
 
 def main(silk_id,promotion_id,x_vayne):
     token = get_token(silk_id)
