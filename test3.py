@@ -8,7 +8,7 @@ silk_id=612528803
 x_vayne=2395933
 
 
-methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
+methodname = 'SilkwormService.SearchStorePromotionList'
 
 token=get_token(silk_id)
 data = get_data(methodname)

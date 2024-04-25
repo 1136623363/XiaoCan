@@ -14,7 +14,7 @@ SilkwormMobileCommunityService.ExchangeGoods: {"silk_id": "","exchange_id": 46,"
 
 
 SilkwormLbsService.Geocoder: SilkwormLbs #定位请求
-
+SilkwormService.SearchStorePromotionList: {"silk_id":"","latitude":22.533319,"longitude":113.930412,"promotion_sort":1,"store_platform":0,"store_type":99,"offset":0,"number":15,"keyword":"","app_id":20} #搜索
 SilkwormService.GetStorePromotionDetail: {silk_id: "", promotion_id: "", app_id: 20} #店铺库存信息
 SilkwormService.GetPromotionOrderList: {"silk_id":"","order_status": 0,"offset": 0,"number": 10,"app_id": 20} #订单
 SilkwormService.CancelPromotionQuota: {"silk_id": "","promotion_order_id": "","app_id": 20} # 取消订单

@@ -16,6 +16,7 @@ SilkwormMobileCommunityService.ExchangeGoods: SilkwormCommunity #兑换饭票
 SilkwormService.CancelPromotionQuota: Silkworm  # 取消订单
 SilkwormService.GetClientPromotionOrder: Silkworm #抢单
 SilkwormRcsService.MeituanShangjinGetPoiList: SilkwormRcs #附近商铺
-SilkwormService.GrabPromotionQuota: Silkworm
+SilkwormService.GrabPromotionQuota: Silkworm #抢单
 DataLakeService.Report: SilkwormDataLake
-SilkwormMobileMarketingService.CompleteTaskEvent: SilkwormMarketing
+SilkwormMobileMarketingService.CompleteTaskEvent: SilkwormMarketing #延时
+SilkwormService.SearchStorePromotionList: Silkworm #搜索
