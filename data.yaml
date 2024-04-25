@@ -11,10 +11,9 @@ SilkwormCardService.GetUserCardNumber: {"silk_id": "","card_number_mode": 1,"app
 SilkwormCardService.GetUserCardList: {"silk_id": "","status": 0,"offset": 0,"number": 10,"app_id": 20} #卡券详情
 SilkwormMobileCommunityService.ExchangeGoods: {"silk_id": "","exchange_id": 46,"app_id": 20} #兑换饭票
 
-SilkwormService.GetStorePromotionDetail: {silk_id: "", promotion_id: 20128623, app_id: 20} #店铺信息
+SilkwormService.GetStorePromotionDetail: {silk_id: "", promotion_id: 20128623, app_id: 20} #店铺库存信息
 
 SilkwormLbsService.Geocoder: SilkwormLbs #定位请求
-#SilkwormService.GetPromotionOrderList: Silkworm #未提交订单
-SilkwormService.GetPromotionOrderList: {"silk_id":"","order_status": 0,"offset": 0,"number": 10,"app_id": 20} #附近店铺
+SilkwormService.GetPromotionOrderList: {"silk_id":"","order_status": 1,"offset": 0,"number": 10,"app_id": 20} #订单
 SilkwormService.CancelPromotionQuota: {"silk_id": "","promotion_order_id": 141030631,"app_id": 20} # 取消订单
 SilkwormService.GetClientPromotionOrder: {"silk_id": "","promotion_order_id": 20128623,"app_id": 20} #抢单

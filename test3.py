@@ -1,10 +1,15 @@
-import yaml
+from utils import *
 
-def get_servername(methodname):
-    # 读取YAML文件
-    with open('data.yaml', 'r', encoding='utf-8') as f:
-        data = yaml.safe_load(f)
-    # 获取键为'SilkwormService.GetClientUserInfo'对应的值
-    result = data.get(methodname)
-    return result
-print(get_servername('SilkwormService.GetClientUserInfo'))
+# silk_id=843278704
+# x_vayne=1315903
+silk_id=612528803
+x_vayne=2395933
+methodname = 'SilkwormService.GetClientPromotionOrder'
+
+token=get_token(silk_id)
+data = get_data(methodname)
+data.update({"silk_id":silk_id})
+resp = requ(silk_id=silk_id,json_data=data,methodname=methodname,x_vayne=x_vayne,servername=get_servername(methodname),token=token)
+
+# print(resp)
+print(resp)
