@@ -35,8 +35,10 @@ if __name__ == '__main__':
 
     #积分抽奖
     dt_object = datetime.datetime.now()
+    print(dt_object)
     hour = dt_object.hour
     minute = dt_object.minute
+    print(hour,minute)
     if (12 <= hour < 13 and 1 <= minute <= 11) or (23 <= hour < 24 and 49 <= minute <= 59):
         for silk_id, x_vayne in user_dict.items():
             Lucky(silk_id,x_vayne)
@@ -45,14 +47,16 @@ if __name__ == '__main__':
 
 
     #抢单
-    # keyword = "奈雪"
-    promotion_id_list = search(list(user_dict.items())[0][0],list(user_dict.items())[0][1])
-    # print(promotion_id_list)
-    for promotion_id in promotion_id_list:
-        # print(promotion_id)
-        for silk_id,x_vayne in user_dict.items():
-            print(str(main(silk_id=silk_id,promotion_id=promotion_id,x_vayne=x_vayne)))
-
+    if (hour >= 8 and hour <= 24):
+        # keyword = "奈雪"
+        promotion_id_list = search(list(user_dict.items())[0][0],list(user_dict.items())[0][1])
+        # print(promotion_id_list)
+        for promotion_id in promotion_id_list:
+            # print(promotion_id)
+            for silk_id,x_vayne in user_dict.items():
+                print(str(main(silk_id=silk_id,promotion_id=promotion_id,x_vayne=x_vayne)))
+    else:
+        print("未在抢单时间")
 
     #红包雨
     flag = True
