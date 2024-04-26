@@ -215,10 +215,10 @@ def main(silk_id,promotion_id,x_vayne):
                 if promotion_id in promotion_id_list:
                     print("已有该订单")
                     # print(resp)
-                    promotion_order_id = resp["order_list"][0]['promotion_order_id']
+                    promotion_order_id = [item['promotion_order_id'] for item in resp["order_list"] if item["store_promotion"]["promotion_id"] == promotion_id][0]
                 #如果已有订单#剩余时间检测
                     print('剩余时间检测')
-                    time_out = resp["order_list"][0]["timeout_time"]
+                    time_out = [item['timeout_time'] for item in resp["order_list"] if item['promotion_order_id'] == promotion_order_id][0]#resp["order_list"][0]["timeout_time"]
                     time_sub = time_out-int(str(int(datetime.datetime.now().timestamp() * 1000))[:10])
                     if time_sub > (10*60):
                         # 大于20分钟跳过
