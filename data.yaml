@@ -22,7 +22,7 @@ SilkwormService.GetClientPromotionOrder: {"silk_id":"","promotion_order_id":1413
 SilkwormService.GrabPromotionQuota: {"silk_id":"","promotion_id":"","store_platform":1,"if_advance_order":false,"if_pre_order":false,"latitude":0,"longitude":0,"city_code":440305,"app_id":20} #{"silk_id":"","promotion_id":20243078,"store_platform":1,"if_advance_order":false,"if_pre_order":false,"latitude":0,"longitude":0,"city_code":440305,"redpack_id":822945,"app_id":20}
 DataLakeService.Report: {"silk_id":"","rt":3,"rps":[{"s":34247150,"p":20243078,"st":359112,"n":1}],"app_id":20}
 SilkwormMobileMarketingService.CompleteTaskEvent: {"silk_id":"","task_type":1,"promotion_order_id":"","app_id":20} #延时
-SilkwormLotteryMobile.RedPackRainGrabNum: {"silk_id": "","event_id": "","click_num": 99} #抢红包雨
+SilkwormLotteryMobile.RedPackRainGrabNum: {"silk_id": "","event_id": "","click_num": 20} #抢红包雨
 SilkwormLotteryMobile.GetRedPackRainEvent: {"silk_id":"","city_code":440305,"app_id":20} #红包雨信息
 ActivityTaskMobileService.OpenBoxCountdown: {"silk_id":"","app_id": 20} #宝箱积分场次
 ActivityTaskMobileService.OpenBox: {"silk_id":"","app_id": 20} #打开宝箱
