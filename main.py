@@ -30,20 +30,21 @@ def search(silk_id,x_vayne,keyword="奈雪的茶（深圳南山欢乐颂店）")
         return []
 
 if __name__ == '__main__':
-    # create_
-    dt_object = datetime.datetime.now()
 
-    # get the hour and minute from the datetime object
+    user_dict = get_user()
+
+    #积分抽奖
+    dt_object = datetime.datetime.now()
     hour = dt_object.hour
     minute = dt_object.minute
-
-    # promotion_id_list=[20243035,20243028,20243078]
-    user_dict = get_user()
     if (12 <= hour < 13 and 1 <= minute <= 11) or (23 <= hour < 24 and 49 <= minute <= 59):
         for silk_id, x_vayne in user_dict.items():
             Lucky(silk_id,x_vayne)
     else:
         print("未在抽奖时间")
+
+
+    #抢单
     # keyword = "奈雪"
     promotion_id_list = search(list(user_dict.items())[0][0],list(user_dict.items())[0][1])
     # print(promotion_id_list)
@@ -51,6 +52,20 @@ if __name__ == '__main__':
         # print(promotion_id)
         for silk_id,x_vayne in user_dict.items():
             print(str(main(silk_id=silk_id,promotion_id=promotion_id,x_vayne=x_vayne)))
+
+
+    #红包雨
+    flag = True
+    for silk_id, x_vayne in user_dict.items():
+        if flag:
+            flag = RedPackRain(silk_id,x_vayne)
+
+    #积分宝箱
+    flag = True
+    for silk_id, x_vayne in user_dict.items():
+        if flag:
+            flag = OpenBox(silk_id,x_vayne)
+
 
 
 # print(str(main(silk_id=silk_id,promotion_id=promotion_id,x_vayne=x_vayne)))

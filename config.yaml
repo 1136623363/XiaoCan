@@ -20,3 +20,7 @@ SilkwormService.GrabPromotionQuota: Silkworm #抢单
 DataLakeService.Report: SilkwormDataLake
 SilkwormMobileMarketingService.CompleteTaskEvent: SilkwormMarketing #延时
 SilkwormService.SearchStorePromotionList: Silkworm #搜索
+SilkwormLotteryMobile.RedPackRainGrabNum: SilkwormLottery #抢红包雨
+SilkwormLotteryMobile.GetRedPackRainEvent: SilkwormLottery #红包雨信息
+ActivityTaskMobileService.OpenBoxCountdown: ActivityTask #宝箱积分
+ActivityTaskMobileService.OpenBox: ActivityTask #打开宝箱

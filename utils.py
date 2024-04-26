@@ -183,6 +183,47 @@ def Lucky(silk_id,x_vayne):
         print(f"进行了{count}次抽奖")
     print("今日无抽奖次数")
 
+
+def RedPackRain(silk_id,x_vayne):
+    token = get_token(silk_id)
+
+    methodname = 'SilkwormLotteryMobile.GetRedPackRainEvent'
+    data = get_data(methodname)
+    data.update({"silk_id": silk_id})
+    resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                servername=get_servername(methodname), token=token)
+    # print(resp)
+    event_id = resp["event"]["event_id"]
+    begin_time = resp["event"]["begin_time"]
+    end_time = resp["event"]["end_time"]
+    # print(begin_time,int(datetime.datetime.now().timestamp()))
+    if begin_time <= int(datetime.datetime.now().timestamp()) and int(datetime.datetime.now().timestamp()) <= end_time:
+        methodname = 'SilkwormLotteryMobile.RedPackRainGrabNum'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id, "event_id": event_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        print(resp)
+        return True
+    elif begin_time <= int(datetime.datetime.now().timestamp()) and int(datetime.datetime.now().timestamp()) > end_time:
+        print(f"该场红包雨已结束 {datetime.datetime.fromtimestamp(begin_time)}--{datetime.datetime.fromtimestamp(end_time)}")
+        return False
+    else:
+        print(f"下一场红包雨未开始 开始时间：{datetime.datetime.fromtimestamp(begin_time)}")
+        return False
+    return False
+
+def OpenBox(silk_id,x_vayne):
+    methodname = 'ActivityTaskMobileService.OpenBox'
+
+    token = get_token(silk_id)
+    data = get_data(methodname)
+    data.update({"silk_id": silk_id})
+    resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                servername=get_servername(methodname), token=token)
+    print(resp)
+    print("已领取该场次宝箱")
+
 def main(silk_id,promotion_id,x_vayne):
     token = get_token(silk_id)
 
@@ -248,3 +289,4 @@ def main(silk_id,promotion_id,x_vayne):
                 # 抢单
                 print('无该订单')
                 return qiangdan(silk_id, promotion_id, x_vayne)
+
