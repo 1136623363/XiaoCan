@@ -5,8 +5,8 @@ SilkwormService.GetStorePromotionList: {"latitude": 22.528949,"longitude": 113.9
 SilkwormRcsService.MeituanShangjinGetPoiList: {"lat": 22.528746,"lng": 113.943016,"silk_id": "","page_pv_id": "","sort_type": 3,"app_id": 20} #附近美团商铺
 ActivityTaskMobileService.UserTaskV2: {"silk_id": "","app_id": 20} #用户积分
 SilkwormLotteryMobile.LotteryInfo: {"silk_id": ""} #抽奖次数
-SilkwormLotteryMobile.Lottery: {"silk_id": "","prize_type": 2} #抽奖
-SilkwormLotteryMobile.AddLotteryTimes: {"silk_id": "","type": 2} #增加抽奖次数
+SilkwormLotteryMobile.Lottery: {"silk_id": "","prize_type": 1} #抽奖
+SilkwormLotteryMobile.AddLotteryTimes: {"silk_id": "","type": 3} #增加抽奖次数
 SilkwormCardService.GetUserCardNumber: {"silk_id": "","card_number_mode": 1,"app_id": 20} #可用卡券数量和即将过期
 SilkwormCardService.GetUserCardList: {"silk_id": "","status": 0,"offset": 0,"number": 10,"app_id": 20} #卡券详情
 SilkwormMobileCommunityService.ExchangeGoods: {"silk_id": "","exchange_id": 46,"app_id": 20} #兑换饭票
@@ -21,8 +21,18 @@ SilkwormService.CancelPromotionQuota: {"silk_id": "","promotion_order_id": "","a
 SilkwormService.GetClientPromotionOrder: {"silk_id":"","promotion_order_id":141301737,"app_id":20} #
 SilkwormService.GrabPromotionQuota: {"silk_id":"","promotion_id":"","store_platform":1,"if_advance_order":false,"if_pre_order":false,"latitude":0,"longitude":0,"city_code":440305,"app_id":20} #{"silk_id":"","promotion_id":20243078,"store_platform":1,"if_advance_order":false,"if_pre_order":false,"latitude":0,"longitude":0,"city_code":440305,"redpack_id":822945,"app_id":20}
 DataLakeService.Report: {"silk_id":"","rt":3,"rps":[{"s":34247150,"p":20243078,"st":359112,"n":1}],"app_id":20}
-SilkwormMobileMarketingService.CompleteTaskEvent: {"silk_id":"","task_type":1,"promotion_order_id":"","app_id":20} #延时
+SilkwormMobileMarketingService.CompleteTaskEvent: {"silk_id":"","task_type":4,"promotion_order_id":"","app_id":20} #延时
 SilkwormLotteryMobile.RedPackRainGrabNum: {"silk_id": "","event_id": "","click_num": 20} #抢红包雨
 SilkwormLotteryMobile.GetRedPackRainEvent: {"silk_id":"","city_code":440305,"app_id":20} #红包雨信息
+SilkwormLotteryMobile.JoinRedPackRainEvent: {"silk_id": "","event_id": "","city_code": 440305}
 ActivityTaskMobileService.OpenBoxCountdown: {"silk_id":"","app_id": 20} #宝箱积分场次
 ActivityTaskMobileService.OpenBox: {"silk_id":"","app_id": 20} #打开宝箱
+
+
+SilkwormService.ClientWithdraw: {"silk_id": "", "silk": 1,"channel": 1,"app_id": 20}
+
+SilkwormService.GetClientWithdrawStatus: {"silk_id": "","app_id": 20}
+
+RedPackService.GetUserMaxRedPack: {'silk_id': "",'app_id': 20,}
+
+SilkwormService.UploadOrderVoucher: {"silk_id":"","promotion_order":{"promotion_order_id":141910832,"platform_order_screenshot":"[]","platform_evaluation_screenshot":[],"platform_order_id":"2101046602829266321","user_remark":""},"platform_pic":"","if_force_manual_review":false,"if_supplemental":false,"if_first_phase":false,"if_resubmit":false,"app_id":20}

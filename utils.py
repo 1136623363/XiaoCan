@@ -167,7 +167,7 @@ def Lucky(silk_id,x_vayne):
     if lottery_info['if_shared'] == False:
         methodname = 'SilkwormLotteryMobile.AddLotteryTimes'
         data = get_data(methodname)
-        data.update({"silk_id": silk_id})
+        data.update({"silk_id": silk_id,})
         resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
                     servername=get_servername(methodname), token=token)
         resp
@@ -198,6 +198,13 @@ def RedPackRain(silk_id,x_vayne):
     end_time = resp["event"]["end_time"]
     # print(begin_time,int(datetime.datetime.now().timestamp()))
     if begin_time <= int(datetime.datetime.now().timestamp()) and int(datetime.datetime.now().timestamp()) <= end_time:
+        methodname = 'SilkwormLotteryMobile.JoinRedPackRainEvent'
+        data = get_data(methodname)
+        data.update({"silk_id": silk_id, "event_id": event_id})
+        resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    servername=get_servername(methodname), token=token)
+        print(resp)
+
         methodname = 'SilkwormLotteryMobile.RedPackRainGrabNum'
         data = get_data(methodname)
         data.update({"silk_id": silk_id, "event_id": event_id})
@@ -221,8 +228,12 @@ def OpenBox(silk_id,x_vayne):
     data.update({"silk_id": silk_id})
     resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
                 servername=get_servername(methodname), token=token)
-    print(resp)
-    print("已领取该场次宝箱")
+    if resp['status']['code'] != 0:
+        print(resp)
+        print("已领取该场次宝箱")
+        return False
+    else:
+        return True
 
 def main(silk_id,promotion_id,x_vayne):
     token = get_token(silk_id)
