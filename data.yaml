@@ -5,7 +5,7 @@ SilkwormService.GetStorePromotionList: {"latitude": 22.528949,"longitude": 113.9
 SilkwormRcsService.MeituanShangjinGetPoiList: {"lat": 22.528746,"lng": 113.943016,"silk_id": "","page_pv_id": "","sort_type": 3,"app_id": 20} #附近美团商铺
 ActivityTaskMobileService.UserTaskV2: {"silk_id": "","app_id": 20} #用户积分
 SilkwormLotteryMobile.LotteryInfo: {"silk_id": ""} #抽奖次数
-SilkwormLotteryMobile.Lottery: {"silk_id": "","prize_type": 2} #抽奖
+SilkwormLotteryMobile.Lottery: {"silk_id": "","prize_type": ""} #抽奖
 SilkwormLotteryMobile.AddLotteryTimes: {"silk_id": "","type": 3} #增加抽奖次数
 SilkwormCardService.GetUserCardNumber: {"silk_id": "","card_number_mode": 1,"app_id": 20} #可用卡券数量和即将过期
 SilkwormCardService.GetUserCardList: {"silk_id": "","status": 0,"offset": 0,"number": 10,"app_id": 20} #卡券详情
