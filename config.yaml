@@ -19,6 +19,7 @@ SilkwormRcsService.MeituanShangjinGetPoiList: SilkwormRcs #附近商铺
 SilkwormService.GrabPromotionQuota: Silkworm #抢单
 DataLakeService.Report: SilkwormDataLake
 SilkwormMobileMarketingService.CompleteTaskEvent: SilkwormMarketing #延时
+SilkwormMobileMarketingService.Lottery: SilkwormMarketing
 SilkwormService.SearchStorePromotionList: Silkworm #搜索
 SilkwormLotteryMobile.RedPackRainGrabNum: SilkwormLottery #抢红包雨
 SilkwormLotteryMobile.GetRedPackRainEvent: SilkwormLottery #红包雨信息

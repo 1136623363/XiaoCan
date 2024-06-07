@@ -59,14 +59,14 @@ def requ(silk_id,token,servername,methodname,json_data,x_vayne):
         'x-sivir': token,#'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOjIzOTU5MzMsImV4cCI6MTcxNzE1NjMzMH0.NTnAAx1VrOjOKDW9mv1g5xhYAEe4Lrl9LAqgeGGw2II',
         'x-teemo': str(silk_id),#'843278704',#'612528803',
         'x-vayne': str(x_vayne),#'1315903',#'2395933',
-        'x-version': '1.4.48',
+        'x-version': '1.4.76',
         'xweb_xhr': '1',
     }
     headers1.update(headers2)
     response = requests.post('https://gw.xiaocantech.com/rpc', headers=headers1, json=json_data)
     # print(headers1)
 
-    # print(response.text)
+    print(response.text)
     return response.json()
 
 
