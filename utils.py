@@ -116,14 +116,15 @@ def qiangdan(silk_id,promotion_id,x_vayne):
                     return "抢单异常"+str(resp)
                 else:
                     print("抢单成功")
-                    print("开始延时")
-                    methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
-                    data = get_data(methodname)
-                    data.update({"silk_id": silk_id,"promotion_order_id": promotion_order_id})
-                    resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
-                                servername=get_servername(methodname), token=token)
-
-                    return "延时成功：" + str(resp)
+                    print("暂停延时")
+                    # print("开始延时")
+                    # methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
+                    # data = get_data(methodname)
+                    # data.update({"silk_id": silk_id,"promotion_order_id": promotion_order_id})
+                    # resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    #             servername=get_servername(methodname), token=token)
+                    #
+                    # return "延时成功：" + str(resp)
 
             else:
                 # 兑换饭票
@@ -147,14 +148,15 @@ def qiangdan(silk_id,promotion_id,x_vayne):
                     return "抢单异常" + str(resp)
                 else:
                     print("抢单成功")
-                    print("开始延时")
-                    methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
-                    data = get_data(methodname)
-                    data.update({"silk_id": silk_id, "promotion_order_id": promotion_order_id})
-                    resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
-                                servername=get_servername(methodname), token=token)
-
-                    return "延时成功：" + str(resp)
+                    print("暂停延时")
+                    # print("开始延时")
+                    # methodname = 'SilkwormMobileMarketingService.CompleteTaskEvent'
+                    # data = get_data(methodname)
+                    # data.update({"silk_id": silk_id, "promotion_order_id": promotion_order_id})
+                    # resp = requ(silk_id=silk_id, json_data=data, methodname=methodname, x_vayne=x_vayne,
+                    #             servername=get_servername(methodname), token=token)
+                    #
+                    # return "延时成功：" + str(resp)
 
 def Lucky(silk_id,x_vayne):
     methodname = 'SilkwormLotteryMobile.LotteryInfo'
